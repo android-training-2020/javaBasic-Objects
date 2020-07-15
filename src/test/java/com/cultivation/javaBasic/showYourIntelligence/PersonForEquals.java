@@ -34,17 +34,14 @@ public class PersonForEquals {
     @SuppressWarnings("Contract")
     @Override
     public boolean equals(Object obj) {
-        // TODO: please modify the following code to pass the test
-        // <--start
-        throw new NotImplementedException();
-        // --end-->
+        if(obj instanceof PersonForEquals) {
+            return this.name == ((PersonForEquals) obj).name && this.yearOfBirth == ((PersonForEquals) obj).yearOfBirth;
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
-        // TODO: please modify the following code to pass the test
-        // <--start
-        throw new NotImplementedException();
-        // --end-->
+        return Objects.hash(name, yearOfBirth);
     }
 }
