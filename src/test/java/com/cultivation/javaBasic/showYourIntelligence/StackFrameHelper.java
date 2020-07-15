@@ -4,9 +4,8 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class StackFrameHelper {
     public static String getCurrentMethodName() {
-        // TODO: please modify the following code to pass the test
-        // <--start
-        throw new NotImplementedException();
-        // --end-->
+        final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
+        StackTraceElement frame = ste[2];
+        return frame.getClassName() + "." + frame.getMethodName();
     }
 }
